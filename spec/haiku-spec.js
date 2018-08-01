@@ -2,24 +2,31 @@ import {Haiku} from '../src/haiku';
 
 describe ('Haiku', function() {
   let poem;
-  let sample1
-  let sample2
-  let sample3
+  let sample;
+
 
   beforeEach(function() {
-    poem = new Haiku
-
-     sample1 = "i mean were looking",
-     sample2 = "down on waynes basement only",
-     sample3 = "thats not waynes basement"
+    poem = new Haiku("i mean were looking", "down on waynes basemente only", "thats not waynes basement");
+    sample = ["i mean were looking".split(' '), "down on waynes basement only".split(' '), "thats not waynes basement".split(' ')]
 
   });
 
 
-  it ('should split all three lines and return one array', function() {
-    let joinLines = [sample1, sample2, sample3]
-    let result = poem.splitLines();
-    expect(result).toEqual(joinLines);
+  it ('should remove silent e', function() {
+    sample = "i mean wer looking".split(' ')
+    let result = poem.removeSilentE();
+    expect(result).toEqual(sample);
   });
+
+  // it ('should clean silent vowels', function() {
+  //   let newSample = "i man were loking".split(' ')
+  //
+  //   let result = poem.removeSilentDouble()
+  //   console.log(result);
+  //   expect(result).toEqual(newSample);
+  // });
+
+
+
 
 });
