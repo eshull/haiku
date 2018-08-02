@@ -6,7 +6,7 @@ describe ('Haiku', function() {
 
 
   beforeEach(function() {
-    poem = new Haiku("i mean were looking", "down on waynes select only", "thats not waynes basement");
+    poem = new Haiku("i mean were looking", "down on waynes basement only", "thats not waynes basement");
     sample = ["i mean were looking".split(' '), "down on waynes basement only".split(' '), "thats not waynes basement".split(' ')]
 
   });
