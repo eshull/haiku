@@ -31,10 +31,17 @@ describe ('Haiku', function() {
     expect(result).toEqual(newNumber);
   });
 
-  it ('should test haiku', function() {
-    let result = poem.isHaiku();
-    expect(result).toEqual(true);
-  });
+  // it ('should clean strings', function() {
+  //   let sample = "i men wer loking".split(' ')
+  //   let result = poem.cleanLines(poem.line1)
+  //   expect(result).toEqual(sample);
+  // });
+
+
+  // it ('should test haiku', function() {
+  //   let result = poem.isHaiku();
+  //   expect(result).toEqual(true);
+  // });
 
 
 

@@ -76,29 +76,29 @@ export class Haiku {
   return vowelCount
 }
 
-cleanLines(line){
-  line = line.removeSilentE()
-  line = line.removeSilentDouble()
+// cleanLines(line){
+//   let newLine = this.removeSilentE(line)
+//   newLine = this.removeSilentDouble(line)
+//
+//   return newLine
+// }
 
-  return line
-}
 
-
-  isHaiku(){
-
-    let line1 = this.cleanLines(this.line1)
-    let line2 = this.cleanLines(this.line2)
-    let line3 = this.cleanLines(this.line3)
-    console.log(line1);
-
-    let line1Count = this.countVowels(line1)
-    let line2Count = this.countVowels(line2)
-    let line3Count = this.countVowels(line3)
-
-    if (line1Count == 5 && line2Count == 7 && line3ount == 5){
-     return true
-   }
-  }
+  // isHaiku(){
+  //
+  //   let line1 = this.cleanLines(this.line1)
+  //   let line2 = this.cleanLines(this.line2)
+  //   let line3 = this.cleanLines(this.line3)
+  //   console.log(line1);
+  //
+  //   let line1Count = this.countVowels(line1)
+  //   let line2Count = this.countVowels(line2)
+  //   let line3Count = this.countVowels(line3)
+  //
+  //   if (line1Count == 5 && line2Count == 7 && line3ount == 5){
+  //    return true
+  //  }
+  // }
 
 
 
