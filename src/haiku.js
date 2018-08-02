@@ -5,7 +5,6 @@ export class Haiku {
   this.line3 = line3.split(' ')
 }
 
-
   removeSilentE(){
     var cleanLines = this.line1
     for (var i = 0 ; i < cleanLines.length ; i++){
@@ -17,17 +16,15 @@ export class Haiku {
   }
 
   removeSilentDouble(){
-    let cleanLines = this.line1;
+    let cleanLines = this.line1
 
 
     for (let i = 0 ; i < cleanLines.length ; i++){
-      console.log(cleanLines);
        if (cleanLines[i].includes('ee')) {
         cleanLines[i] = cleanLines[i].replace('ee', 'e')
       }
       else if (cleanLines[i].includes('oo')) {
         cleanLines[i] = cleanLines[i].replace('oo', 'o')
-        console.log(cleanLines[i]);
       }
       else if (cleanLines[i].includes('ea')) {
         cleanLines[i] = cleanLines[i].replace('ea', 'a')
@@ -44,10 +41,61 @@ export class Haiku {
       else if (cleanLines[i].includes('ey')) {
         cleanLines[i] = cleanLines[i].replace('ey', 'y')
       }
-
     }
       return cleanLines
 
   }
+
+  countVowels(line){
+    let vowelCount = 0
+    if (line.length <= 3){
+      vowelCount++
+    }
+    else {
+
+      for (let i = 0 ; i < line.length ; i++){
+        for(let x = 0 ; x < line[i].length ; x++) {
+          if (line[i][x] == 'a') {
+            vowelCount++
+            console.log(x);
+          }
+          if (line[i][x] == 'e') {
+            vowelCount++
+          }
+          if (line[i][x] == 'i') {
+            vowelCount++
+          }
+          if (line[i][x] == 'o') {
+            vowelCount++
+          }
+          if (line[i][x] == 'u') {
+            vowelCount++
+          }
+          if (line[i][x] == 'y') {
+            vowelCount++
+          }
+        }
+      }
+  }
+  return vowelCount
+}
+
+  // isHaiku(){
+  //   let  =
+  //
+  //
+  //
+  //   let line1Count = countVowels(this.line1)
+  //   let line2Count = this.line2.countVowels()
+  //   let line3Count = this.line3.countVowels()
+  //
+  //   if (line1Count == 5 && line2Count == 7 && line3count == 5){
+  //    return true
+  //  }
+  // }
+  //
+
+
+
 
 }
