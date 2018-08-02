@@ -4,7 +4,6 @@ export class Haiku {
   this.line2 = line2.split(' ')
   this.line3 = line3.split(' ')
 }
-
   removeSilentE(){
     var cleanLines = this.line1
     for (var i = 0 ; i < cleanLines.length ; i++){
@@ -17,8 +16,6 @@ export class Haiku {
 
   removeSilentDouble(){
     let cleanLines = this.line1
-
-
     for (let i = 0 ; i < cleanLines.length ; i++){
        if (cleanLines[i].includes('ee')) {
         cleanLines[i] = cleanLines[i].replace('ee', 'e')
@@ -43,7 +40,6 @@ export class Haiku {
       }
     }
       return cleanLines
-
   }
 
   countVowels(line){
@@ -80,20 +76,30 @@ export class Haiku {
   return vowelCount
 }
 
-  // isHaiku(){
-  //   let  =
-  //
-  //
-  //
-  //   let line1Count = countVowels(this.line1)
-  //   let line2Count = this.line2.countVowels()
-  //   let line3Count = this.line3.countVowels()
-  //
-  //   if (line1Count == 5 && line2Count == 7 && line3count == 5){
-  //    return true
-  //  }
-  // }
-  //
+cleanLines(line){
+  line = line.removeSilentE()
+  line = line.removeSilentDouble()
+
+  return line
+}
+
+
+  isHaiku(){
+
+    let line1 = this.cleanLines(this.line1)
+    let line2 = this.cleanLines(this.line2)
+    let line3 = this.cleanLines(this.line3)
+    console.log(line1);
+
+    let line1Count = this.countVowels(line1)
+    let line2Count = this.countVowels(line2)
+    let line3Count = this.countVowels(line3)
+
+    if (line1Count == 5 && line2Count == 7 && line3ount == 5){
+     return true
+   }
+  }
+
 
 
 

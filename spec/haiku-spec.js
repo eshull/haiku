@@ -31,6 +31,11 @@ describe ('Haiku', function() {
     expect(result).toEqual(newNumber);
   });
 
+  it ('should test haiku', function() {
+    let result = poem.isHaiku();
+    expect(result).toEqual(true);
+  });
+
 
 
 
