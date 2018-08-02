@@ -4,42 +4,40 @@ export class Haiku {
   this.line2 = line2.split(' ')
   this.line3 = line3.split(' ')
 }
-  removeSilentE(){
-    var cleanLines = this.line1
-    for (var i = 0 ; i < cleanLines.length ; i++){
-      if (cleanLines[i].endsWith('e')) {
-        cleanLines[i] = cleanLines[i].slice('e', -1);
+  removeSilentE(line){
+    for (var i = 0 ; i < line.length ; i++){
+      if (line[i].endsWith('e')) {
+        line[i] = line[i].slice('e', -1);
       }
    }
-   return cleanLines
+   return line
   }
 
-  removeSilentDouble(){
-    let cleanLines = this.line1
-    for (let i = 0 ; i < cleanLines.length ; i++){
-       if (cleanLines[i].includes('ee')) {
-        cleanLines[i] = cleanLines[i].replace('ee', 'e')
+  removeSilentDouble(line){
+    for (let i = 0 ; i < line.length ; i++){
+       if (line[i].includes('ee')) {
+        line[i] = line[i].replace('ee', 'e')
       }
-      else if (cleanLines[i].includes('oo')) {
-        cleanLines[i] = cleanLines[i].replace('oo', 'o')
+      else if (line[i].includes('oo')) {
+        line[i] = line[i].replace('oo', 'o')
       }
-      else if (cleanLines[i].includes('ea')) {
-        cleanLines[i] = cleanLines[i].replace('ea', 'a')
+      else if (line[i].includes('ea')) {
+        line[i] = line[i].replace('ea', 'a')
       }
-      else if (cleanLines[i].includes('aa')) {
-        cleanLines[i] = cleanLines[i].replace('aa', 'a')
+      else if (line[i].includes('aa')) {
+        line[i] = line[i].replace('aa', 'a')
       }
-      else if (cleanLines[i].includes('ie')) {
-        cleanLines[i] = cleanLines[i].replace('ie', 'i')
+      else if (line[i].includes('ie')) {
+        line[i] = line[i].replace('ie', 'i')
       }
-      else if (cleanLines[i].includes('ei')) {
-        cleanLines[i] = cleanLines[i].replace('ei', 'i')
+      else if (line[i].includes('ei')) {
+        line[i] = line[i].replace('ei', 'i')
       }
-      else if (cleanLines[i].includes('ey')) {
-        cleanLines[i] = cleanLines[i].replace('ey', 'y')
+      else if (line[i].includes('ey')) {
+        line[i] = line[i].replace('ey', 'y')
       }
     }
-      return cleanLines
+      return line
   }
 
   countVowels(line){
@@ -76,12 +74,12 @@ export class Haiku {
   return vowelCount
 }
 
-// cleanLines(line){
-//   let newLine = this.removeSilentE(line)
-//   newLine = this.removeSilentDouble(line)
-//
-//   return newLine
-// }
+cleanLines(line){
+  let newLine = this.removeSilentE(line)
+  newLine = this.removeSilentDouble(newLine)
+
+  return newLine
+}
 
 
   // isHaiku(){
@@ -95,7 +93,7 @@ export class Haiku {
   //   let line2Count = this.countVowels(line2)
   //   let line3Count = this.countVowels(line3)
   //
-  //   if (line1Count == 5 && line2Count == 7 && line3ount == 5){
+  //   if (line1Count == 5 && line2Count == 7 && line3Count == 5){
   //    return true
   //  }
   // }

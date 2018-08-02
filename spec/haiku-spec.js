@@ -14,14 +14,14 @@ describe ('Haiku', function() {
 
   it ('should remove silent e', function() {
     sample = "i mean wer looking".split(' ')
-    let result = poem.removeSilentE();
+    let result = poem.removeSilentE(poem.line1);
     expect(result).toEqual(sample);
   });
 
   it ('should clean silent vowels', function() {
     let newSample = "i man were loking".split(' ')
 
-    let result = poem.removeSilentDouble()
+    let result = poem.removeSilentDouble(poem.line1)
     expect(result).toEqual(newSample);
   });
 
@@ -31,11 +31,11 @@ describe ('Haiku', function() {
     expect(result).toEqual(newNumber);
   });
 
-  // it ('should clean strings', function() {
-  //   let sample = "i men wer loking".split(' ')
-  //   let result = poem.cleanLines(poem.line1)
-  //   expect(result).toEqual(sample);
-  // });
+  it ('should clean strings', function() {
+    let sample = "i man wer loking".split(' ')
+    let result = poem.cleanLines(poem.line1)
+    expect(result).toEqual(sample);
+  });
 
 
   // it ('should test haiku', function() {
