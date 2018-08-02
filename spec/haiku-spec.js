@@ -18,13 +18,12 @@ describe ('Haiku', function() {
     expect(result).toEqual(sample);
   });
 
-  // it ('should clean silent vowels', function() {
-  //   let newSample = "i man were loking".split(' ')
-  //
-  //   let result = poem.removeSilentDouble()
-  //   console.log(result);
-  //   expect(result).toEqual(newSample);
-  // });
+  it ('should clean silent vowels', function() {
+    let newSample = "i man were loking".split(' ')
+
+    let result = poem.removeSilentDouble()
+    expect(result).toEqual(newSample);
+  });
 
 
 
